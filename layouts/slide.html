@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div class="slide">
+    {{- range .Params.blocks -}}
+        {{- if eq .template "background-image" -}}{{ partial "blocks/hero" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "floating-content" -}}{{ partial "blocks/media-feature" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "content-section" -}}{{ partial "blocks/content" (dict "Params" .) }}{{- end -}}
+        {{- if eq .template "decoration" -}}{{ partial "blocks/decioration" (dict "Params" .) }}{{- end -}}
+    {{- end -}}
+</div>
+{{ end }}
